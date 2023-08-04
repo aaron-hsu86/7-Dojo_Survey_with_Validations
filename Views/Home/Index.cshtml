@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Survey
+
+<div class="text-center">
+    <fieldset>
+    <form asp-action="Create" asp-controller="Home" method="post">
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" type="text" class="form-control" >
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Location"></label>
+            <select asp-for="Location">
+                <option value="">--Select a Location--</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Seattle">Seattle</option>
+                <option value="New York">New York</option>
+            </select>
+            <span asp-validation-for="Location" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Language"></label>
+            <select asp-for="Language">
+                <option value="">--Select a Language--</option>
+                <option value="C#">C#</option>
+                <option value="Javascript">Javascript</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+            </select>
+            <span asp-validation-for="Language" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Comment"></label>
+            <textarea asp-for="Comment" rows="5" class="form-control" placeholder="Optional..." value=""></textarea>
+            <span asp-validation-for="Comment" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-outline-dark">Submit</button>
+    </form>
+    </fieldset>
+</div>

@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Results";
+}
+@model List<Survey>
+<h1>@ViewData["Title"]</h1>
+
+@foreach(Survey data in Model)
+{
+
+    <div class="d-flex">
+        <u><h1>Name: @data.Name</h1></u>
+    </div>
+    <div class="d-flex">
+        <h4>Dojo Location: @data.Location</h4>
+    </div>
+    <div class="d-flex">
+        <p>Favorite Language: @data.Language</p>
+    </div>
+    <div>
+        <p>Comment (optional):</p>
+        @{
+            if(data.Comment != null)
+            {
+                <p>@data.Comment</p>
+            }
+            else
+            {
+                <p class="noComment">No comment</p>
+            }
+        }
+    </div>
+    <hr/>
+}
+<a href="/" class="button"><button>Go Back</button></a>
